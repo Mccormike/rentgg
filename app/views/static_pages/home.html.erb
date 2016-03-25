@@ -1,0 +1,40 @@
+<% provide(:title, 'Welcome') %>
+
+<!-- Page Content -->
+    <div class='image'>
+        <div class='test'>
+            <h1>Don't Buy it!  Rent it!</h1>
+            <h1><a href="#content">Check out the latest listings!</a></h1>
+        </div>
+    
+    </div>
+
+    <div id='content'>
+
+        <!-- Title -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>Latest Listings</h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Page Features -->
+           <div class="row text-center">
+
+            <% @listings.each do |listing| %>
+                <div class="col-md-3 col-sm-6 hero-feature">
+                    <div class="thumbnail">
+                        <%= image_tag listing.image.url %>
+                        <div class="caption">
+                            <h3><%= listing.title %></h3>
+                            <p><%= listing.description %></p>
+                            <p>
+                                <a href=<%= listing_path(listing) %> class="btn btn-default">View Listing</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            <% end %>
+            </div>
+    </div>

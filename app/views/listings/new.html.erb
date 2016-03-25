@@ -1,0 +1,113 @@
+<br>
+<br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+    
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Create a listing</h3>
+        </div>
+        
+      <div class="panel-body">
+        <%= form_for @listing do |f| %>
+          <div class="form-group">
+            <%= f.label :title %>
+            <%= f.text_field :title, class: "form-control", autofocus: true, placeholder: 'Be as specific as possible!'%>
+          </div>
+          
+          <div class="form-group">
+            <%= f.label :description %>
+            <%= f.text_area :description, class: "form-control", rows: 4, placeholder: 'Tell us about your item!  This is a good place to list the condition, usage, special features, additional attachments/cords, etc.' %>
+          </div>
+          
+          <div class="row">
+            <div class="col-lg-4">
+              <%= f.label :hourly_rate %>
+              <div class="input-group">
+                <span class="input-group-addon" id="basic-addon3">$</span>
+                <%= f.text_field :hourly_rate, class: 'form-control' %>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <%= f.label :daily_rate %>
+              <div class="input-group">
+                <span class="input-group-addon" id="basic-addon3">$</span>
+                <%= f.text_field :daily_rate, class: 'form-control' %>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <%= f.label :weekly_rate %>
+              <div class="input-group">
+                <span class="input-group-addon" id="basic-addon3">$</span>
+                <%= f.text_field :weekly_rate, class: 'form-control' %>
+              </div>
+            </div>
+
+          </div>
+          <br>
+          
+          <div class="form-group">
+            <%= f.label :address_line_1 %>
+            <%= f.text_field :address_line_1, class: 'form-control' %>
+          </div>
+          
+          <div class="form-group">
+            <%= f.label :address_line_2 %>
+            <%= f.text_field :address_line_2, class: 'form-control' %>
+          </div>
+          
+          <div class="form-group">
+            <%= f.label :city %>
+            <%= f.text_field :city, class: 'form-control' %>
+          </div>
+          
+          <div class="form-group">
+            <%= f.label :state %>
+            <%= f.text_field :state, class: 'form-control' %>
+          </div>
+          
+          <div class="form-group">
+            <%= f.label :zip %>
+            <%= f.text_field :zip, class: 'form-control' %>
+          </div>          
+          
+          
+          
+
+          <%= f.file_field :image%>
+          <hr>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        <% end %>
+      </div>
+      
+      </div>
+    </div>
+    
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+      <div class="newlisting">
+        <h3>Will I be charged?</h3>
+        <p>Listing an item on RentGG is absolutely free!</p>
+      </div>
+      
+      <div class="spacer5"></div>
+      
+      <div class="newlisting">
+        <h3>How do I receive payment?</h3>
+        <p>Payments are sent to the owner's Paypal account.  The amount paid is determined by the duration of the rental.</p>
+      </div>
+      
+      <div class="spacer5"></div>
+
+      <div class="newlisting">
+        <h3>Can I have multiple listings at once?</h3>
+        <p>Of course!  RentGG allows users to create as many listings as they'd like - but don't forget to rent from others too!</p>
+      </div>
+            
+    </div>
+    
+  </div>
+</div>
